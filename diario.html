@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Diario Emocional</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fdfcf9;
+            color: #2c3e50;
+            margin: 0;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #33635c;
+        }
+        .sugerencia {
+            font-size: 1.1rem;
+            color: #607d8b;
+            margin: 1rem 0;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #33635c;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        .sugerencia-btn {
+            background-color: #ccc;
+            color: black;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nueva Entrada de Diario</h1>
+        <p class="sugerencia" id="sugerencia">Sugerencia: Si pudiera hablar con mi yo más joven, ¿qué le diría?</p>
+        <input type="text" placeholder="Un título para tu reflexión…" />
+        <textarea rows="6" placeholder="Escribe libremente aquí…"></textarea>
+        <br>
+        <button>Guardar Entrada</button>
+        <button class="sugerencia-btn" onclick="nuevaSugerencia()">Nueva Sugerencia</button>
+    </div>
+
+    <script>
+        const sugerencias = [
+            "¿Qué necesitas soltar hoy?",
+            "Si tu cuerpo hablara, ¿qué diría?",
+            "¿Qué aprendiste de ti esta semana?",
+            "¿Qué es lo que más te da calma últimamente?",
+            "Si pudiera hablar con mi yo más joven, ¿qué le diría?"
+        ];
+        function nuevaSugerencia() {
+            const randomIndex = Math.floor(Math.random() * sugerencias.length);
+            document.getElementById("sugerencia").textContent = "Sugerencia: " + sugerencias[randomIndex];
+        }
+    </script>
+</body>
+</html>
